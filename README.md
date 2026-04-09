@@ -1,44 +1,97 @@
-# ascii-animated
+<div align="center">
+  <h1>🎨 ASCII Animated</h1>
+  
+  **El instalador definitivo de animaciones ASCII para tu terminal (v1.0)**  
+  *Dale vida a tu consola con las mejores herramientas retro y visuales.*
+  
+  [![Bash](https://img.shields.io/badge/Bash-Script-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)](#)
+  [![Linux](https://img.shields.io/badge/Linux-Supported-FCC624?style=flat-square&logo=linux&logoColor=black)](#)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+  [![Version](https://img.shields.io/badge/version-1.0-orange.svg?style=flat-square)](#)
 
-`ascii-animated` es un instalador interactivo multi-distro (Fedora/RHEL, Debian/Ubuntu y Arch Linux) que te permite instalar fácilmente las animaciones y utilidades ASCII más conocidas para la terminal de Linux.
+  [Características](#-características) • 
+  [Instalación](#-instalación) • 
+  [Herramientas Incluidas](#-herramientas-incluidas) • 
+  [Combos Épicos](#-combos-épicos)
+</div>
 
-## Características
+---
 
-El script autodetecta tu distribución de Linux y su gestor de paquetes (`dnf`, `apt`, o `pacman`), instala las dependencias base necesarias (como `gcc`, `make`, `git`, `ncurses`, etc.) y te permite seleccionar qué programas deseas instalar mediante un menú interactivo.
+## 🌟 Características
 
-### Herramientas incluidas
+- **Multi-Distribución**: Detección automática y soporte para *Fedora/RHEL/CentOS*, *Debian/Ubuntu/Mint*, y *Arch Linux/Manjaro*.
+- **Gestor Interactivo**: Un menú TUI (Text User Interface) con casillas de verificación para que elijas exactamente qué querés instalar.
+- **Instalación Transparente**: Se encarga de descargar las dependencias, clonar repositorios si no están en los repos oficiales y compilar todo en segundo plano.
+- **Sin Bloatware**: Vos decidís qué programas se quedan en tu sistema.
 
-El script incluye la opción de instalar:
+---
 
-1.  **cmatrix**: Lluvia de caracteres estilo Matrix cayendo en pantalla.
-2.  **cbonsai**: Un bonsai que crece en tiempo real con ramas y hojas ASCII.
-3.  **sl**: Tren ASCII que cruza la pantalla si escribís 'sl' en vez de 'ls'.
-4.  **lolcat**: Colorea cualquier output en degradado arcoíris.
-5.  **cowsay + cowthink**: Vaca (cowsay) o globo de pensamiento (cowthink) con tu texto.
-6.  **fortune**: Frases y citas aleatorias (ideal para usar junto con cowsay y lolcat).
-7.  **nyancat**: El famoso gato Nyan corriendo con su arcoíris a toda velocidad.
-8.  **asciiquarium**: Acuario animado con peces, tiburones y burbujas ASCII.
-9.  **ascii-rain**: Lluvia suave de gotas ASCII con efecto ncurses (comando: `rain`).
-10. **lavat**: Lava lamp animada con burbujas que suben y bajan.
-11. **pipes.sh**: Tuberías que se van dibujando solas en todas direcciones.
-12. **cava**: Visualizador de audio — barras que bailan con la música.
+## 🚀 Instalación
 
-## Uso
+Instalar y ejecutar `ascii-animated` es tan simple como clonar este repositorio y ejecutar el script. 
 
-1. Dale permisos de ejecución al script:
-   ```bash
-   chmod +x ascii-animated.sh
-   ```
+Asegurate de tener `git` instalado en tu sistema.
 
-2. Ejecuta el script:
-   ```bash
-   ./ascii-animated.sh
-   ```
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/aporcelli/ascii-animated.git
 
-3. Sigue las instrucciones del menú en pantalla para elegir tu distribución y seleccionar las animaciones que quieras instalar.
+# 2. Entrar al directorio
+cd ascii-animated
 
-## Combos recomendados
-¡Prueba combinar algunas de las herramientas instaladas!
+# 3. Darle permisos de ejecución al script
+chmod +x ascii-animated.sh
+
+# 4. Ejecutar el instalador interactivo
+./ascii-animated.sh
+```
+
+> **Nota:** El script te va a pedir permisos de `sudo` para instalar paquetes a través de tu gestor de paquetes (`apt`, `dnf` o `pacman/yay`).
+
+---
+
+## 🛠 Herramientas Incluidas
+
+Con `ascii-animated` podés instalar la siguiente colección de arte y animación ASCII:
+
+| Herramienta | Comando | Descripción |
+| :--- | :--- | :--- |
+| **Matrix** | `cmatrix` | 🌧 Lluvia de caracteres verdes estilo *The Matrix* cayendo en tu pantalla. |
+| **Bonsai** | `cbonsai -l` | 🌳 Un árbol bonsai que crece de forma procesal, rama por rama, hoja por hoja. |
+| **Locomotora** | `sl` | 🚂 Tren ASCII que cruza la pantalla si escribís mal `ls`. |
+| **Lolcat** | `lolcat` | 🌈 Filtro que colorea cualquier output en un hermoso degradado arcoíris. |
+| **Cowsay** | `cowsay` | 🐮 Una vaca (u otros animales) que repite el texto que le pases. |
+| **Fortune** | `fortune` | 🥠 Imprime citas, frases célebres y bromas aleatorias. |
+| **Nyan Cat** | `nyancat` | 🐱🌈 El gato Nyan corriendo con su arcoíris a toda velocidad. |
+| **Asciiquarium**| `asciiquarium` | 🐠 Un acuario animado con peces, tiburones, barcos y burbujas. |
+| **Rain** | `rain` | ☔ Lluvia suave de gotas ASCII con efecto ncurses. |
+| **Lavat** | `lavat` | 🌋 Simulación de lámpara de lava con burbujas que suben y bajan. |
+| **Pipes** | `pipes.sh` | 🪄 Tuberías tipo salvapantallas retro que se van dibujando solas. |
+| **Cava** | `cava` | 🎵 Visualizador de audio que reacciona a los sonidos del sistema. |
+
+---
+
+## 🧙‍♂️ Combos Épicos
+
+Una vez instaladas las herramientas, podés combinarlas mediante *pipes* (`|`) de bash para lograr efectos increíbles en tu terminal:
+
+**1. Vaca filosófica arcoíris:**
 ```bash
 fortune | cowsay | lolcat
 ```
+
+**2. Vaca pensadora arcoíris:**
+```bash
+fortune | cowthink | lolcat
+```
+
+**3. Bonsai infinito y colorido:**
+```bash
+cbonsai -i -l -L 40 | lolcat
+```
+
+---
+
+<div align="center">
+  <p>Construido para hacer las terminales un poco más felices. 🤍</p>
+</div>
