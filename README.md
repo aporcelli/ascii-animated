@@ -1,13 +1,14 @@
 <div align="center">
   <h1>🎨 ASCII Animated</h1>
   
-  **El instalador definitivo de animaciones ASCII para tu terminal (v1.0)**  
+  **El instalador definitivo de animaciones ASCII para tu terminal (v1.1)**  
   *Dale vida a tu consola con las mejores herramientas retro y visuales.*
   
   [![Bash](https://img.shields.io/badge/Bash-Script-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)](#)
   [![Linux](https://img.shields.io/badge/Linux-Supported-FCC624?style=flat-square&logo=linux&logoColor=black)](#)
+  [![macOS](https://img.shields.io/badge/macOS-Supported-000000?style=flat-square&logo=apple&logoColor=white)](#)
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-  [![Version](https://img.shields.io/badge/version-1.0-orange.svg?style=flat-square)](#)
+  [![Version](https://img.shields.io/badge/version-1.1-orange.svg?style=flat-square)](#)
 
   [Características](#-características) • 
   [Instalación](#-instalación) • 
@@ -19,7 +20,7 @@
 
 ## 🌟 Características
 
-- **Multi-Distribución**: Detección automática y soporte para *Fedora/RHEL/CentOS*, *Debian/Ubuntu/Mint*, y *Arch Linux/Manjaro*.
+- **Multi-Plataforma**: Detección automática y soporte para *Fedora/RHEL/CentOS*, *Debian/Ubuntu/Mint*, *Arch Linux/Manjaro* y *macOS* (Homebrew).
 - **Gestor Interactivo**: Un menú TUI (Text User Interface) con casillas de verificación para que elijas exactamente qué querés instalar.
 - **Instalación Transparente**: Se encarga de descargar las dependencias, clonar repositorios si no están en los repos oficiales y compilar todo en segundo plano.
 - **Sin Bloatware**: Vos decidís qué programas se quedan en tu sistema.
@@ -46,7 +47,7 @@ chmod +x ascii-animated.sh
 ./ascii-animated.sh
 ```
 
-> **Nota:** El script te va a pedir permisos de `sudo` para instalar paquetes a través de tu gestor de paquetes (`apt`, `dnf` o `pacman/yay`).
+> **Nota:** En Linux, el script te va a pedir permisos de `sudo` para instalar paquetes a través de tu gestor de paquetes (`apt`, `dnf` o `pacman/yay`). En macOS, se usa `brew` (Homebrew) sin necesidad de `sudo`.
 
 ---
 
