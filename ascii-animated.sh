@@ -141,6 +141,7 @@ install_cmatrix() {
         fedora)  sudo dnf install -y cmatrix --skip-unavailable ;;
         debian)  sudo apt install -y cmatrix ;;
         arch)    sudo pacman -S --noconfirm cmatrix ;;
+        macos)   brew install cmatrix ;;
     esac
 }
 
@@ -157,6 +158,7 @@ install_cbonsai() {
             cd ~; rm -rf "$TMPDIR"
             ;;
         arch)    sudo pacman -S --noconfirm cbonsai ;;
+        macos)   brew install cbonsai ;;
     esac
 }
 
@@ -167,6 +169,7 @@ install_sl() {
         fedora)  sudo dnf install -y sl --skip-unavailable ;;
         debian)  sudo apt install -y sl ;;
         arch)    sudo pacman -S --noconfirm sl ;;
+        macos)   brew install sl ;;
     esac
 }
 
@@ -177,6 +180,7 @@ install_lolcat() {
         fedora)  sudo dnf install -y lolcat --skip-unavailable ;;
         debian)  sudo apt install -y lolcat ;;
         arch)    sudo pacman -S --noconfirm lolcat ;;
+        macos)   brew install lolcat ;;
     esac
 }
 
@@ -188,6 +192,7 @@ install_cowsay() {
         fedora)  sudo dnf install -y cowsay --skip-unavailable ;;
         debian)  sudo apt install -y cowsay ;;
         arch)    sudo pacman -S --noconfirm cowsay ;;
+        macos)   brew install cowsay ;;
     esac
 }
 
@@ -198,6 +203,7 @@ install_fortune() {
         fedora)  sudo dnf install -y fortune-mod --skip-unavailable ;;
         debian)  sudo apt install -y fortune ;;
         arch)    sudo pacman -S --noconfirm fortune-mod ;;
+        macos)   brew install fortune ;;
     esac
 }
 
@@ -215,6 +221,7 @@ install_nyancat() {
             cd ~; rm -rf "$TMPDIR"
             ;;
         arch)    sudo pacman -S --noconfirm nyancat ;;
+        macos)   brew install nyancat ;;
     esac
 }
 
@@ -250,6 +257,7 @@ install_asciiquarium() {
             fi
             ;;
         arch)    sudo pacman -S --noconfirm asciiquarium ;;
+        macos)   brew install asciiquarium ;;
     esac
 }
 
@@ -258,6 +266,14 @@ install_ascii_rain() {
     # Lluvia suave de gotas ASCII con efecto ncurses — comando: rain
     case "$DISTRO" in
         arch)    yay -S --noconfirm ascii-rain-git ;;
+        macos)
+            TMPDIR=$(mktemp -d)
+            git clone https://github.com/nkleemann/ascii-rain "$TMPDIR/ascii-rain"
+            gcc -o "$TMPDIR/ascii-rain/rain" "$TMPDIR/ascii-rain/rain.c" -lncurses
+            cp "$TMPDIR/ascii-rain/rain" /usr/local/bin/rain
+            rm -rf "$TMPDIR"
+            info "ascii-rain → /usr/local/bin/rain"
+            ;;
         *)
             TMPDIR=$(mktemp -d)
             git clone https://github.com/nkleemann/ascii-rain "$TMPDIR/ascii-rain"
@@ -272,13 +288,18 @@ install_ascii_rain() {
 install_lavat() {
     step "Instalando lavat"
     # Lava lamp animada con burbujas que suben y bajan en la terminal
-    TMPDIR=$(mktemp -d)
-    git clone https://github.com/AngelJumbo/lavat "$TMPDIR/lavat"
-    cd "$TMPDIR/lavat"
-    make
-    sudo make install
-    cd ~; rm -rf "$TMPDIR"
-    info "lavat instalado"
+    case "$DISTRO" in
+        macos)   brew install lavat ;;
+        *)
+            TMPDIR=$(mktemp -d)
+            git clone https://github.com/AngelJumbo/lavat "$TMPDIR/lavat"
+            cd "$TMPDIR/lavat"
+            make
+            sudo make install
+            cd ~; rm -rf "$TMPDIR"
+            info "lavat instalado"
+            ;;
+    esac
 }
 
 install_pipes() {
@@ -286,6 +307,7 @@ install_pipes() {
     # Tuberías que se van dibujando solas en todas direcciones
     case "$DISTRO" in
         arch)    yay -S --noconfirm bash-pipes ;;
+        macos)   brew install pipes-sh ;;
         *)
             TMPDIR=$(mktemp -d)
             git clone https://github.com/pipeseroni/pipes.sh "$TMPDIR/pipes.sh"
@@ -334,6 +356,7 @@ install_cava() {
             fi
             ;;
         arch)    sudo pacman -S --noconfirm cava ;;
+        macos)   brew install cava ;;
     esac
 }
 
