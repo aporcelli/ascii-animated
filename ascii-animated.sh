@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ─────────────────────────────────────────────────────────────────────────────
-#  ascii-animated — Instalador multi-distro de animaciones ASCII
-#  Soporta: Fedora/RHEL, Debian/Ubuntu, Arch Linux
+#  ascii-animated — Instalador multi-plataforma de animaciones ASCII
+#  Soporta: Fedora/RHEL, Debian/Ubuntu, Arch Linux, macOS
 # ─────────────────────────────────────────────────────────────────────────────
 
 RED='\033[0;31m'
@@ -33,7 +33,7 @@ print_banner() {
   ╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝
 EOF
     echo -e "${NC}"
-    echo -e "  ${DIM}Instalador multi-distro de animaciones ASCII para la terminal${NC}\n"
+    echo -e "  ${DIM}Instalador multi-plataforma de animaciones ASCII para la terminal${NC}\n"
 }
 
 # ─── Detección automática de distro ──────────────────────────────────────────
