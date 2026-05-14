@@ -270,9 +270,9 @@ install_ascii_rain() {
             TMPDIR=$(mktemp -d)
             git clone https://github.com/nkleemann/ascii-rain "$TMPDIR/ascii-rain"
             gcc -o "$TMPDIR/ascii-rain/rain" "$TMPDIR/ascii-rain/rain.c" -lncurses
-            cp "$TMPDIR/ascii-rain/rain" /usr/local/bin/rain
+            cp "$TMPDIR/ascii-rain/rain" "$(brew --prefix)/bin/rain"
             rm -rf "$TMPDIR"
-            info "ascii-rain → /usr/local/bin/rain"
+            info "ascii-rain → $(brew --prefix)/bin/rain"
             ;;
         *)
             TMPDIR=$(mktemp -d)
