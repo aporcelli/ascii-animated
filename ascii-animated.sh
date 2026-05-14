@@ -38,6 +38,11 @@ EOF
 
 # ─── Detección automática de distro ──────────────────────────────────────────
 detect_distro() {
+    # Detectar macOS primero (uname -s devuelve "Darwin" en macOS)
+    if [ "$(uname -s)" = "Darwin" ]; then
+        DISTRO="macos"; PKG_MANAGER="brew"
+        return
+    fi
     if [ -f /etc/os-release ]; then
         . /etc/os-release
         case "$ID" in
@@ -55,13 +60,14 @@ detect_distro() {
 # ─── Selector de distro ───────────────────────────────────────────────────────
 select_distro() {
     print_banner
-    echo -e "  ${BOLD}Seleccioná tu distribución Linux:${NC}\n"
+    echo -e "  ${BOLD}Seleccioná tu distribución / sistema operativo:${NC}\n"
     if [ "$DISTRO" != "unknown" ] && [ -n "$DISTRO" ]; then
         echo -e "  ${GREEN}[auto-detectada: $DISTRO]${NC}\n"
     fi
     echo -e "  ${BOLD}1.${NC}  Fedora / RHEL / CentOS / Rocky / AlmaLinux  ${DIM}(dnf)${NC}"
     echo -e "  ${BOLD}2.${NC}  Debian / Ubuntu / Mint / Pop!_OS / Kali      ${DIM}(apt)${NC}"
     echo -e "  ${BOLD}3.${NC}  Arch Linux / Manjaro / EndeavourOS / Garuda  ${DIM}(pacman + yay)${NC}"
+    echo -e "  ${BOLD}4.${NC}  macOS                                       ${DIM}(brew)${NC}"
     echo -e "  ${BOLD}Q.${NC}  Salir\n"
     while true; do
         echo -ne "  ${BOLD}Opción:${NC} "
@@ -70,8 +76,9 @@ select_distro() {
             1) DISTRO="fedora";  PKG_MANAGER="dnf";    break ;;
             2) DISTRO="debian";  PKG_MANAGER="apt";    break ;;
             3) DISTRO="arch";    PKG_MANAGER="pacman"; break ;;
+            4) DISTRO="macos";   PKG_MANAGER="brew";   break ;;
             q|Q) echo -e "\n  ${DIM}Saliendo.${NC}\n"; exit 0 ;;
-            *) warning "Opción inválida, ingresá 1, 2, 3 o Q." ;;
+            *) warning "Opción inválida, ingresá 1, 2, 3, 4 o Q." ;;
         esac
     done
 }
