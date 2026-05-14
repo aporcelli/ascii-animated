@@ -109,6 +109,26 @@ install_base_deps() {
                 rm -rf "$TMPDIR"
             fi
             ;;
+        macos)
+            if ! command -v brew &>/dev/null; then
+                error "Homebrew no está instalado."
+                info "Podés instalarlo desde: https://brew.sh"
+                echo ""
+                echo -ne "  ${BOLD}¿Querés que lo instalemos por vos? (s/n):${NC} "
+                read -r respuesta
+                case "$respuesta" in
+                    s|S|si|Si|SI)
+                        info "Instalando Homebrew..."
+                        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                        ;;
+                    *)
+                        warning "Instalá Homebrew manualmente y volvé a ejecutar el script."
+                        exit 1
+                        ;;
+                esac
+            fi
+            brew update
+            ;;
     esac
 }
 
