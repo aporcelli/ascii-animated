@@ -70,6 +70,8 @@ Con `ascii-animated` podés instalar la siguiente colección de arte y animació
 | **Pipes** | `pipes.sh` | 🪄 Tuberías tipo salvapantallas retro que se van dibujando solas. |
 | **Cava** | `cava` | 🎵 Visualizador de audio que reacciona a los sonidos del sistema. |
 
+> **🍎 Nota para macOS:** `cava` en macOS funciona únicamente con la entrada del micrófono. macOS no ofrece loopback de audio nativo, por lo que no es posible visualizar el audio del sistema directamente.
+
 ---
 
 ## 🧙‍♂️ Combos Épicos
